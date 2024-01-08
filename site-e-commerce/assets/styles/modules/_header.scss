@@ -1,0 +1,90 @@
+@use "../tools/functions";
+
+.header {
+    position: fixed;
+    width: 100%;
+    height: 110px;
+    background: var(--white);
+    display: flex;
+    border-bottom: solid 1px var(--grey-2);
+
+    .container {
+        display: flex;
+        max-width: 100%;
+        padding: 34px 100px;
+        gap: functions.space(3.5);
+    }
+
+    .btn {
+        padding: functions.space(1.5) functions.space(6);
+    }
+
+    .header__language {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        &:before {
+            content: '';
+            position: absolute;
+            right: 7px;
+            top: 3px;
+            width: 22px;
+            background: #fff; //for Firefox in Android
+
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+            pointer-events: none;
+            display: block;
+        }
+
+        &:after {
+            content: url("/images/arrow-down.svg");
+            position: absolute;
+            right: 15px;
+            top: 30%;
+            margin-top: -3px;
+            z-index: 2;
+            pointer-events: none;
+            width: 0;
+            height: 0;
+            pointer-events: none;
+        }
+
+        select {
+            appearance: none;
+            border: none;
+            outline: none;
+            padding: functions.space(1.5) functions.space(3.5);
+
+            //fix for ie 10 later
+            &::-ms-expand {
+                display: none;
+            }
+        }
+    }
+
+    .header__search-bar {
+        display: flex;
+        max-width: 267px;
+        gap: functions.space(1.5);
+        padding: functions.space(1.5) functions.space(2.5);
+        background: var(--grey-4);
+        border-radius: 8px;
+        border: solid 1px var(--grey-4);
+
+        input {
+            background: transparent;
+            outline: none;
+            border: none;
+        }
+
+        &:focus-within {
+            border: solid 1px var(--primary);
+        }
+
+        &:before {
+            content: url("/images/search.svg");
+        }
+    }
+}

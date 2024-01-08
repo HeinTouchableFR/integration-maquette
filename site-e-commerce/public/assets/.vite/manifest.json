@@ -1,0 +1,12 @@
+{
+  "admin.ts": {
+    "file": "admin-w40geAFS.js",
+    "isEntry": true,
+    "src": "admin.ts"
+  },
+  "app.ts": {
+    "file": "app-w40geAFS.js",
+    "isEntry": true,
+    "src": "app.ts"
+  }
+}

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="icon"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+    {% block stylesheets %}
+        {{- vite_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+        {{- vite_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <a href="{{ url('page.home') }}">
+            <img src="images/Logo.svg" alt="Logo" width="90" height="45">
+        </a>
+        <div class="spacer"></div>
+        <label class="header__search-bar">
+            <input type="text" placeholder="Search" />
+        </label>
+        <div class="spacer"></div>
+        <label class="header__language">
+            <select name="language" id="language">
+                <option value="us">English (United States)</option>
+                <option value="en">English (British)</option>
+                <option value="fr">French</option>
+            </select>
+        </label>
+        <a class="btn btn-primary header__login" href="/login">
+            Login
+        </a>
+        <a class="btn btn-secondary header__sign-up" href="/sign-up">
+            Sign Up
+        </a>
+    </div>
+</header>
+{% block content %}{% endblock %}
+<footer class="footer">
+    <div class="container">
+        <div class="footer_info">
+            <div class="footer__info-item">
+                <h2 class="footer__info-item-title">Need Help</h2>
+                <ul>
+                    <li>
+                        <a href="/contact">Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="/track-order">Track Order</a>
+                    </li>
+                    <li>
+                        <a href="/returns">Returns & Refunds</a>
+                    </li>
+                    <li>
+                        <a href="/faq">FAQ's</a>
+                    </li>
+                    <li>
+                        <a href="/career">Career</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__info-item">
+                <h2 class="footer__info-item-title">Company</h2>
+                <ul>
+                    <li>
+                        <a href="/about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/blog">Euphoria Blog</a>
+                    </li>
+                    <li>
+                        <a href="/euphoriastan">Euphoriastan</a>
+                    </li>
+                    <li>
+                        <a href="/collaboration">Collaboration</a>
+                    </li>
+                    <li>
+                        <a href="/media">Media</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__info-item">
+                <h2 class="footer__info-item-title">More Info</h2>
+                <ul>
+                    <li>
+                        <a href="/terms">Term and Conditions</a>
+                    </li>
+                    <li>
+                        <a href="/policy">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="/shipping-policy">Shipping Policy</a>
+                    </li>
+                    <li>
+                        <a href="/sitemap">Sitemap</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__info-item">
+                <h2 class="footer__info-item-title">Location</h2>
+                <ul>
+                    <li>
+                        <a href="mailto:support@euphoria.in">support@euphoria.in</a>
+                    </li>
+                    <li>
+                        Eklingpura Chouraha, Ahmedabad Main Road
+                    </li>
+                    <li>
+                        (NH 8- Near Mahadev Hotel) Udaipur, India- 313002
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer_info">
+            <div class="footer__info-item">
+                <div class="footer__socials">
+                    <a href="https://facebook.com">
+                        <svg>
+                            <use xlink:href="/images/socials.svg#facebook"></use>
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com">
+                        <svg>
+                            <use xlink:href="/images/socials.svg#instagram"></use>
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com">
+                        <svg>
+                            <use xlink:href="/images/socials.svg#twitter"></use>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com">
+                        <svg>
+                            <use xlink:href="/images/socials.svg#linkedin"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="spacer"></div>
+            <div class="footer__info-item">
+                <h2 class="footer__info-item-title">Download The App</h2>
+                <div class="footer__store">
+                    <a href="https://play.google.com/">
+                        <svg>
+                            <use xlink:href="/images/store.svg#google-play"></use>
+                        </svg>
+                        <span class="footer__store-info">
+                            <span class="footer__store-info-title">Available on the</span>
+                            <span class="footer__store-info-name">Google Play</span>
+                        </span>
+                    </a>
+                    <a href="https://www.apple.com/fr/app-store/">
+                        <svg>
+                            <use xlink:href="/images/store.svg#app-store"></use>
+                        </svg>
+                        <span class="footer__store-info">
+                            <span class="footer__store-info-title">Available on the</span>
+                            <span class="footer__store-info-name">App Store</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <label class="footer__categories">
+            <select name="categories" id="categories">
+                <option value="">Popular Categories</option>
+            </select>
+        </label>
+        <h3 class="footer__copyright">Copyright © 2023 Euphoria Folks Pvt Ltd. All rights reserved.</h3>
+    </div>
+</footer>
+</body>
+</html>

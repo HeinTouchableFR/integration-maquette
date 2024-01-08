@@ -1,0 +1,47 @@
+@use 'functions';
+
+// Responsive
+// ==================
+@mixin up($size) {
+    $size: strip-unit($size);
+    @media (min-width: $size * 1px) {
+        @content;
+    }
+}
+
+@mixin down($size) {
+    $size: strip-unit($size);
+    @media (max-width: $size * 1px) {
+        @content;
+    }
+}
+
+@mixin defineColorHSL($color, $hue, $saturation, $lightness) {
+    #{$color}: unquote("hsl(#{$hue}, #{$saturation}, #{$lightness})");
+    #{$color}-h: #{$hue};
+    #{$color}-s: #{$saturation};
+    #{$color}-l: #{$lightness};
+}
+
+@mixin dark() {
+    @if (&) {
+        @media (prefers-color-scheme: dark) {
+            body:not([class~='theme-light']) & {
+                @content;
+            }
+        }
+        .theme-dark & {
+            @content;
+        }
+    } @else {
+
+        @media (prefers-color-scheme: dark) {
+            body:not([class~='theme-light']) {
+                @content;
+            }
+        }
+        .theme-dark {
+            @content;
+        }
+    }
+}

@@ -9,6 +9,8 @@
 /vendor/
 /node_modules/
 /.idea/
+/.env/
+/public/assets/
 ###< symfony/framework-bundle ###
 
 ###> phpunit/phpunit ###

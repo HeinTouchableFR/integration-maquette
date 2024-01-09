@@ -48,7 +48,7 @@ vendor: composer
 
 .PHONY: deploy
 deploy: ## Déploie les fichiers sur le serveur
-	ssh o2switch 'cd ~/integration-maquette && git pull https://github.com/HeinTouchableFR/integration-maquette.git && cd ~/integration-maquette/site-e-commerce && make install'
+	ssh o2switch 'cd ~/integration-maquette && git pull https://github.com/HeinTouchableFR/integration-maquette.git && cd ~/npm && make install'
 
 .PHONY: install
 install: vendor/autoload.php .env public/build/manifest.json

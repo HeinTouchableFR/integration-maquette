@@ -5,7 +5,10 @@
     "src": "admin.ts"
   },
   "app.ts": {
-    "file": "app-w40geAFS.js",
+    "css": [
+      "app-3Ky6Yyy7.css"
+    ],
+    "file": "app-mx82QIii.js",
     "isEntry": true,
     "src": "app.ts"
   }

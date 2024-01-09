@@ -59,7 +59,7 @@ install: vendor/autoload.php .env public/build/manifest.json
 	cp .env.example .env
 
 vendor/autoload.php: composer.lock
-	php composer install --no-dev --optimize-autoloader
+	composer install --no-dev --optimize-autoloader
 	touch vendor/autoload.php
 
 public/build/manifest.json: package.json

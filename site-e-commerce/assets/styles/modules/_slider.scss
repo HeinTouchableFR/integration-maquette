@@ -32,6 +32,7 @@
                 transform: translateY(-50%);
                 left: 10%;
                 width: 440px;
+                z-index: 10;
 
                 .slider__slides-item-infos-category, .slider__slides-item-infos-title, .slider__slides-item-infos-tags {
                     color: var(--white);

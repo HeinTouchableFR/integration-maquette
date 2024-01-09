@@ -15,31 +15,65 @@
 </head>
 <body>
 <div class="page-wrapper">
-    <header class="header">
+    <nav class="header">
         <div class="container">
             <a href="{{ url('page.home') }}">
                 <img src="images/Logo.svg" alt="Logo" width="90" height="45">
             </a>
             <div class="spacer"></div>
+            {% if isLogged %}
+                <ul class="header__menu">
+                    <li>
+                        <a href="/shop" aria-current="page">Shop</a>
+                    </li>
+                    <li>
+                        <a href="/men">Men</a>
+                    </li>
+                    <li>
+                        <a href="/women">Women</a>
+                    </li>
+                    <li>
+                        <a href="/combos">Combos</a>
+                    </li>
+                    <li>
+                        <a href="/joggers">Joggers</a>
+                    </li>
+                </ul>
+                <div class="spacer"></div>
+            {% endif %}
             <label class="header__search-bar">
-                <input type="text" placeholder="Search" />
+                <input type="text" placeholder="Search"/>
             </label>
             <div class="spacer"></div>
-            <label class="header__language">
-                <select name="language" id="language">
-                    <option value="us">English (United States)</option>
-                    <option value="en">English (British)</option>
-                    <option value="fr">French</option>
-                </select>
-            </label>
-            <a class="btn btn-primary header__login" href="/login">
-                Login
-            </a>
-            <a class="btn btn-secondary header__sign-up" href="/sign-up">
-                Sign Up
-            </a>
+            {% if isLogged %}
+                <div class="header__actions">
+                    <a href="/favorites" title="favorite">
+                        {{ icon("favorite", "icons") }}
+                    </a>
+                    <a href="/account" title="Account">
+                        {{ icon("account", "icons") }}
+                    </a>
+                    <a href="/cart" title="Cart">
+                        {{ icon("cart", "icons") }}
+                    </a>
+                </div>
+            {% else %}
+                <label class="header__language">
+                    <select name="language" id="language">
+                        <option value="us">English (United States)</option>
+                        <option value="en">English (British)</option>
+                        <option value="fr">French</option>
+                    </select>
+                </label>
+                <a class="btn btn-primary header__login" href="/login">
+                    Login
+                </a>
+                <a class="btn btn-secondary header__sign-up" href="/sign-up">
+                    Sign Up
+                </a>
+            {% endif %}
         </div>
-    </header>
+    </nav>
     {% block content %}{% endblock %}
     <footer class="footer">
         <div class="container">
@@ -119,25 +153,17 @@
             <div class="footer_info">
                 <div class="footer__info-item">
                     <div class="footer__socials">
-                        <a href="https://facebook.com">
-                            <svg>
-                                <use xlink:href="/images/socials.svg#facebook"></use>
-                            </svg>
+                        <a href="https://facebook.com" title="Facebook">
+                            {{ icon("facebook", "socials") }}
                         </a>
-                        <a href="https://instagram.com">
-                            <svg>
-                                <use xlink:href="/images/socials.svg#instagram"></use>
-                            </svg>
+                        <a href="https://instagram.com" title="Instagram">
+                            {{ icon("instagram", "socials") }}
                         </a>
-                        <a href="https://twitter.com">
-                            <svg>
-                                <use xlink:href="/images/socials.svg#twitter"></use>
-                            </svg>
+                        <a href="https://twitter.com" title="Twitter">
+                            {{ icon("twitter", "socials") }}
                         </a>
-                        <a href="https://linkedin.com">
-                            <svg>
-                                <use xlink:href="/images/socials.svg#linkedin"></use>
-                            </svg>
+                        <a href="https://linkedin.com" title="Linkedin">
+                            {{ icon("linkedin", "socials") }}
                         </a>
                     </div>
                 </div>
@@ -146,18 +172,14 @@
                     <h2 class="footer__info-item-title">Download The App</h2>
                     <div class="footer__store">
                         <a href="https://play.google.com/">
-                            <svg>
-                                <use xlink:href="/images/store.svg#google-play"></use>
-                            </svg>
+                            {{ icon("google-play", "store") }}
                             <span class="footer__store-info">
                             <span class="footer__store-info-title">Available on the</span>
                             <span class="footer__store-info-name">Google Play</span>
                         </span>
                         </a>
                         <a href="https://www.apple.com/fr/app-store/">
-                            <svg>
-                                <use xlink:href="/images/store.svg#app-store"></use>
-                            </svg>
+                            {{ icon("app-store", "store") }}
                             <span class="footer__store-info">
                             <span class="footer__store-info-title">Available on the</span>
                             <span class="footer__store-info-name">App Store</span>

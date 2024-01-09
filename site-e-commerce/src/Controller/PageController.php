@@ -12,6 +12,7 @@ class PageController extends AbstractController
     public function index(): Response
     {
         return $this->render('pages/home.html.twig', [
+            "isLogged" => true
         ]);
     }
 }

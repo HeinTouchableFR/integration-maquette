@@ -8,6 +8,12 @@
     align-items: center;
     gap: functions.space(1.5);
     transition: .3s;
+    background: var(--white);
+    color: var(--dark);
+
+    &:hover, &:focus {
+        background: var(--grey-3);
+    }
 
     svg {
         width: 20px;

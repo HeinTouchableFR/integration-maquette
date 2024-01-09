@@ -1,13 +1,26 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-    <h1>Home page</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A dolores error excepturi illo nam natus non nostrum
-        perspiciatis porro qui, rem, rerum sapiente vero. A ab alias, aliquam aliquid assumenda at consequatur
-        consequuntur deleniti dolores doloribus dolorum ea eaque eos error eum ex exercitationem harum ipsa itaque
-        mollitia neque nisi odio odit officia perspiciatis placeat possimus quisquam quo reiciendis sint sunt tempora
-        totam voluptates? Adipisci animi aut, dolores eum laborum nobis omnis ratione voluptatum? Accusantium commodi
-        dolor facilis maxime minus nihil nulla officiis veniam. Eius impedit officia reiciendis! A adipisci consequuntur
-        deleniti ducimus eaque ex excepturi maxime neque repudiandae ut?</p>
-
+    <div class="slider" autoplay="auto" duration="5">
+        <div class="slider__slides">
+            <div class="slider__slides-item">
+                <img src="/images/shop-hero-1-product-slide-1.png" alt="shop-hero-1-product-slide-1.png">
+                <div class="slider__slides-item-infos">
+                    <h3 class="slider__slides-item-infos-category">T-shirt / Tops</h3>
+                    <h2 class="slider__slides-item-infos-title">Summer Value Pack</h2>
+                    <h4 class="slider__slides-item-infos-tags">cool / colorful, comfy</h4>
+                    <a href="#" class="btn">Shop Now</a>
+                </div>
+            </div>
+            <div class="slider__slides-item">
+                <img src="/images/shop-hero-1-product-slide-2.png" alt="shop-hero-1-product-slide-1.png">
+            </div>
+            <div class="slider__slides-item">
+                <img src="/images/shop-hero-1-product-slide-3.png" alt="shop-hero-1-product-slide-1.png">
+            </div>
+            <div class="slider__slides-item">
+                <img src="/images/shop-hero-1-product-slide-4.png" alt="shop-hero-1-product-slide-1.png">
+            </div>
+        </div>
+    </div>
 {% endblock %}

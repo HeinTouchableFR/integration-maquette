@@ -46,6 +46,26 @@ vendor: ## Install vendors according to the current composer.lock file
 vendor: c=install --prefer-dist --no-dev --no-progress --no-scripts --no-interaction
 vendor: composer
 
+.PHONY: deploy
+deploy: ## Déploie les fichiers sur le serveur
+	ssh o2switch 'cd ~/integration-maquette && git pull https://github.com/HeinTouchableFR/integration-maquette.git && cd ~/integration-maquette/site-e-commerce && make install'
+
+.PHONY: install
+install: vendor/autoload.php .env public/build/manifest.json
+	php bin/console c:c
+	php bin/console doctrine:migrations:migrate
+
+.env:
+	cp .env.example .env
+
+vendor/autoload.php: composer.lock
+	php composer install --no-dev --optimize-autoloader
+	touch vendor/autoload.php
+
+public/build/manifest.json: package.json
+	npm i
+	npm run build
+
 ## —— NPM 🧙 ——————————————————————————————————————————————————————————————
 npm: ## Run npm, pass the parameter "c=" to run a given command, example: make npm c='install react'
 	@$(eval c ?=)

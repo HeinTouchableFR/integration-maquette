@@ -1,5 +1,6 @@
 **/*.log
 **/*.md
+**/*.php~
 **/*.dist.php
 **/*.dist
 **/*.cache

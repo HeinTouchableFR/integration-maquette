@@ -9,6 +9,7 @@
 @use "modules/carousel";
 @use "modules/slider";
 @use "modules/deals";
+@use "modules/card";
 
 
 :root {
@@ -50,4 +51,25 @@
     flex-direction: column;
     width: 100%;
     overflow: hidden;
+}
+
+
+.shadow {
+    box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.40);
+}
+
+.text-dark {
+    color: var(--dark);
+
+    a, svg {
+        color: var(--dark);
+    }
+}
+
+.text-white {
+    color: var(--white);
+
+    a {
+        color: var(--white);
+    }
 }

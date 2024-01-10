@@ -4,63 +4,14 @@
     .container {
         padding-top: functions.space(16.25);
         padding-bottom: functions.space(12.5);
-        display: flex;
-        gap: functions.space(3.75);
 
-        .deals__item {
-            position: relative;
-            border-radius: 12px;
-            height: 355px;
-            box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.40);
+        .deals__items {
+            display: flex;
+            gap: functions.space(3.75);
+            flex-wrap: wrap;
 
-            img {
-                width: 100%;
-            }
-
-            .deals__item-info {
-                position:  absolute;
-                top: 50%;
-                left: 30px;
-                transform: translateY(-50%);
-                width: 264px;
-
-                .deals__item-info-intro, .deals__item-info-title, .deals__item-info-sub-title, .deals__item-info-link {
-                    font-family: "Core Sans C", serif;
-                    color: var(--white);
-                    line-height: 1.566rem;
-                    letter-spacing: 0.251px;
-                }
-
-                .deals__item-info-intro {
-                    font-weight: bold;
-                    font-size: 1.125rem;
-                    line-height: 1.879rem;
-                    margin-bottom: functions.space(3);
-                }
-
-                .deals__item-info-title {
-                    font-weight: bold;
-                    font-size: 2.125rem;
-                    line-height: 2.819rem;
-                    letter-spacing: inherit;
-                    margin-bottom: functions.space(1);
-                }
-
-                .deals__item-info-sub-title {
-                    margin-bottom: functions.space(5.25);
-                }
-
-                .deals__item-info-link {
-                    font-weight: bold;
-                    font-size: 1.25rem;
-                    line-height: 1.883rem;
-                    letter-spacing: inherit;
-                    text-decoration-line: underline;
-
-                    &:hover {
-                        color: var(--primary);
-                    }
-                }
+            &.gap-20{
+                gap: functions.space(2.5);
             }
         }
     }

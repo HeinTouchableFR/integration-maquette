@@ -66,7 +66,7 @@ export class TouchPlugin {
     if(this.origin && this.lastTranslate) {
       this.item.enableTransition()
 
-      if(Math.abs(this.lastTranslate.x / this.item.carouselWidth) > 0.2) {
+      if(Math.abs(this.lastTranslate.x / this.item.carouselWidth) > 0.1) {
         if(this.lastTranslate.x < 0) {
           this.item.slideToNext()
         } else {

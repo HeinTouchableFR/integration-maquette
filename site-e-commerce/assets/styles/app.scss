@@ -2,9 +2,11 @@
 @use 'tools/mixins';
 @use 'tools/fonts';
 
+@use "modules/common";
 @use "modules/button";
 @use "modules/header";
 @use "modules/footer";
+@use "modules/carousel";
 @use "modules/slider";
 @use "modules/deals";
 

@@ -2,13 +2,11 @@
 
 .deals {
     .container {
-        padding-top: functions.space(16.25);
-        padding-bottom: functions.space(12.5);
-
         .deals__items {
             display: flex;
             gap: functions.space(3.75);
             flex-wrap: wrap;
+            justify-content: center;
 
             &.gap-20{
                 gap: functions.space(2.5);

@@ -1,0 +1,17 @@
+@media(prefers-reduced-motion: no-preference) {
+    .animations__fade_in {
+        opacity: 0;
+        scale: .9;
+        animation: fade-in linear forwards;
+        animation-timeline: view();
+        animation-duration: 1ms; /* Firefox requires this to apply the animation */
+        animation-range: entry;
+    }
+
+    @keyframes fade-in {
+        to {
+            scale: 1;
+            opacity: 1;
+        }
+    }
+}

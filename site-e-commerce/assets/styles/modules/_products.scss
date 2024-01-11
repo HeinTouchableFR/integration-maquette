@@ -1,0 +1,87 @@
+@use "../tools/functions";
+
+.products, .categories {
+    .container {
+        .products__items, .categories__items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: functions.space(4.5);
+            justify-content: center;
+
+            .products__items-card, .categories__items-card {
+                display: block;
+
+                .products__items-card-img, .categories__items-card-img {
+                    border-radius: 12px;
+                    margin-bottom: functions.space(3.75);
+                    border: solid 1px transparent;
+                    transition: .3s;
+                }
+
+                .products__items-card-infos, .categories__items-card-infos {
+                    font-family: "Causten", serif;
+                    display: grid;
+                    grid-template-columns: 164px 85px;
+                    gap: functions.space(4);
+
+                    .products__items-card-infos-title, .categories__items-card-infos-title {
+                        font-size: 1rem;
+                        color: var(--dark);
+                        font-weight: bold;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+
+                    .products__items-card-infos-sub-title, .categories__items-card-infos-sub-title {
+                        font-size: 0.875rem;
+                        color: var(--grey-2);
+                        font-weight: 500;
+                    }
+
+                    .products__items-card-infos-price {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: var(--dark);
+                        background: var(--grey-3);
+                        font-weight: bold;
+                        font-size: 0.875rem;
+                        border-radius: 8px;
+                        transition: .3s;
+                    }
+
+                    .categories__items-card-infos-arrow {
+                        background-color: var(--dark);
+                        mask: url("/images/arrow.svg") left center / 16px 44px no-repeat;
+                        width: 80px;
+                        height: 100%;
+                        transition: .3s;
+                        transform: rotate(180deg);
+                    }
+                }
+
+                &:hover, &:focus {
+                    .products__items-card-img, .categories__items-card-img {
+                        border-color: var(--primary);
+                    }
+
+                    .products__items-card-infos, .categories__items-card-infos {
+                        .products__items-card-infos-title, .categories__items-card-infos-title {
+                            color: var(--primary);
+                        }
+
+                        .products__items-card-infos-price {
+                            color: var(--white);
+                            background: var(--primary);
+                        }
+
+                        .categories__items-card-infos-arrow {
+                            background: var(--primary);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

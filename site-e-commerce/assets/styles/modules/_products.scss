@@ -54,6 +54,7 @@
                     .categories__items-card-infos-arrow {
                         background-color: var(--dark);
                         mask: url("/images/arrow.svg") left center / 16px 44px no-repeat;
+                        -webkit-mask: url("/images/arrow.svg") left center / 16px 44px no-repeat;
                         width: 80px;
                         height: 100%;
                         transition: .3s;

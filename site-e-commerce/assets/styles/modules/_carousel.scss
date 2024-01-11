@@ -55,6 +55,7 @@
                 content: '';
                 background-color: var(--dark);
                 mask: url("/images/arrow.svg") center center / 24px 44px no-repeat;
+                -webkit-mask: url("/images/arrow.svg") center center / 24px 44px no-repeat;
                 height: 100%;
                 width: 80px;
                 transition: .3s;

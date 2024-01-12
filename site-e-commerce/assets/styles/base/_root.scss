@@ -1,6 +1,14 @@
 @use "../abstracts" as *;
 
 :root {
+    @each $breakpoint, $value in $breakpoints {
+        @if $breakpoint == 'small' {
+            --breakpoint-mobile: #{$value};
+        }
+        @if $breakpoint == 'medium' {
+            --breakpoint-tablet: #{$value};
+        }
+    }
     @each $color, $shade-map in $active-theme {
         @each $shade, $value in $shade-map {
             --#{$color}-#{$shade}: #{$value};

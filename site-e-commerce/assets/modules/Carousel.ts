@@ -4,12 +4,13 @@ import {TouchPlugin} from "/modules/TouchPlugin";
 class Carousel {
   private element: HTMLElement;
   private container: HTMLDivElement;
-  private slideToScroll: number;
-  private slidesVisible: number;
   private loop: boolean;
   private items: any;
   private currentItem: number;
   private offset: number;
+  private options: { slidesToScroll: number; slidesVisible: number };
+  private isMobile: boolean;
+  private isTablet: boolean;
 
   /**
    *
@@ -24,8 +25,14 @@ class Carousel {
     this.container.classList.add('carousel__container')
     this.element.setAttribute('tabindex', '0');
 
-    this.slideToScroll = parseInt(this.element.getAttribute('slideToScroll'), 10) || 3
-    this.slidesVisible = parseInt(this.element.getAttribute('slidesVisible'), 10) || 3
+    this.options = {
+      slidesToScroll: parseInt(this.element.getAttribute('slideToScroll'), 10) || 3,
+      slidesVisible: parseInt(this.element.getAttribute('slidesVisible'), 10) || 3
+    }
+
+    this.isMobile = false;
+    this.isTablet = false;
+
     this.loop = this.element.getAttribute('loop') === 'true'
 
     this.items = [].slice.call(this.element.children)
@@ -37,14 +44,15 @@ class Carousel {
 
     this.initCarousel()
 
-    if(this.slideToScroll !== this.items.length) {
-      this.initArrows()
-    }
+    this.initArrows()
+
+    window.addEventListener('resize', this.onResize.bind(this))
+    this.onResize()
   }
 
   initCarousel() {
-    this.offset = this.slidesVisible + this.slideToScroll
-    if (this.loop && this.slideToScroll !== this.items.length) {
+    this.offset = this.options.slidesVisible + this.options.slidesToScroll - 1
+    if (this.loop) {
       this.items = [
         ...this.items.slice(this.items.length - this.offset).map(item => item.cloneNode(true)),
         ...this.items,
@@ -55,9 +63,9 @@ class Carousel {
       if (this.loop) {
         this.container.addEventListener('transitionend', this.resetLoop.bind(this))
       }
-
-      new TouchPlugin(this)
     }
+
+    new TouchPlugin(this)
 
     this.items.forEach((elem) => {
       this.container.appendChild(elem)
@@ -97,6 +105,7 @@ class Carousel {
     this.container.style.width = `${ratio * 100}%`
     this.items.forEach((item) => item.style.width = `${(100 / this.slidesVisible) / ratio}%`)
   }
+
   gotoItem(index: number, animation = true) {
     if (index < 0) {
       if (this.loop) {
@@ -104,7 +113,7 @@ class Carousel {
       } else {
         return
       }
-    } else if (index >= this.items.length || (this.items[this.currentItem + this.slidesVisible] === undefined && index > this.currentItem)) {
+    } else if (index >= this.items.length || (this.items[this.currentItem + this.options.slidesVisible] === undefined && index > this.currentItem)) {
       if (this.loop) {
         index = 0
       } else {
@@ -125,18 +134,33 @@ class Carousel {
   }
 
   slideToPrev() {
-    this.gotoItem(this.currentItem - this.slideToScroll)
+    this.gotoItem(this.currentItem - this.slidesToScroll)
   }
 
   slideToNext() {
-    this.gotoItem(this.currentItem + this.slideToScroll)
+    this.gotoItem(this.currentItem + this.slidesToScroll)
   }
 
   resetLoop() {
-    if (this.currentItem <= this.slideToScroll) {
+    if (this.currentItem <= this.options.slidesToScroll) {
       this.gotoItem(this.currentItem + (this.items.length - 2 * this.offset), false)
     } else if (this.currentItem >= this.items.length - this.offset) {
       this.gotoItem(this.currentItem - (this.items.length - 2 * this.offset), false)
+    }
+  }
+
+  onResize() {
+    let mobile = window.innerWidth / 16 < getComputedStyle(document.documentElement).getPropertyValue('--breakpoint-mobile').replace('em', '');
+    let tablet = window.innerWidth / 16 < getComputedStyle(document.documentElement).getPropertyValue('--breakpoint-tablet').replace('em', '');
+
+    if (tablet !== this.isTablet && !this.isMobile) {
+      this.isTablet = tablet
+      this.isMobile = false
+      this.setStyle()
+    } else if (mobile !== this.isMobile) {
+      this.isMobile = mobile
+      this.isTablet = false
+      this.setStyle()
     }
   }
 
@@ -150,6 +174,26 @@ class Carousel {
 
   translate(percent) {
     this.container.style.transform = `translate3d(${percent}%, 0, 0)`
+  }
+
+  get slidesToScroll() {
+    if (this.isMobile) {
+      return 1
+    } else if (this.isTablet) {
+      return this.options.slidesToScroll === 1 ? 1 : 2
+    } else {
+      return this.options.slidesToScroll
+    }
+  }
+
+  get slidesVisible() {
+    if (this.isMobile) {
+      return 1
+    } else if (this.isTablet) {
+      return 2
+    } else {
+      return this.options.slidesVisible
+    }
   }
 
   get containerWidth() {

@@ -1,0 +1,21 @@
+@use "../abstracts" as *;
+
+.text-center {
+    text-align: center;
+}
+
+.text-end {
+    text-align: end;
+}
+
+.text-white-space-nowrap {
+    white-space: nowrap;
+}
+
+.text-overflow-ellipsis {
+    text-overflow: ellipsis;
+}
+
+.text-overflow-hidden {
+    overflow: hidden;
+}

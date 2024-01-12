@@ -1,0 +1,20 @@
+.position-relative {
+    position: relative;
+}
+
+.position-absolute {
+    position: absolute;
+
+    &[data-position-block="center"] {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &[data-position-left] {
+        left: var(--left-value);
+    }
+
+    &[data-position-right] {
+        right: var(--right-value);
+    }
+}

@@ -1,15 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-    <section class="slider" autoplay="auto" duration="5">
+    <section class="section slider" autoplay="auto" duration="5">
         <div class="slider__slides">
             <div class="slider__slides-item">
                 <img src="/images/shop-hero-1-product-slide-1.png" alt="shop-hero-1-product-slide-1.png">
-                <div class="slider__slides-item-infos">
-                    <h3 class="slider__slides-item-infos-category">T-shirt / Tops</h3>
-                    <h2 class="slider__slides-item-infos-title">Summer Value Pack</h2>
-                    <h4 class="slider__slides-item-infos-tags">cool / colorful, comfy</h4>
-                    <a href="#" class="btn">Shop Now</a>
+                <div class="slider__slides-item-infos clr-neutral-000">
+                    <h3 class="fs-750 ff-accent lh-525 margin-block-end-10">T-shirt / Tops</h3>
+                    <h2 class="fs-1000 ff-accent fw-bold lh-875 margin-block-end-10">Summer Value Pack</h2>
+                    <h4 class="fs-750 ff-accent lh-600 margin-block-end-10">cool / colorful / comfy</h4>
+                    <a href="#" class="button box-shadow-1" data-type="accent">Shop Now</a>
                 </div>
             </div>
             <div class="slider__slides-item">
@@ -23,259 +23,239 @@
             </div>
         </div>
     </section>
-    <section class="deals">
+    <section class="section">
         <div class="container animations__fade_in">
-            <div class="deals__items">
-                <div class="card__item shadow text-white">
-                    <img height="355" src="/images/unsplash_Qyc13QBGaM4.png" alt="Unsplash High Coziness">
-                    <div class="card__item-info">
-                        <h6 class="card__item-info-intro">Low Price</h6>
-                        <h2 class="card__item-info-title">High Coziness</h2>
-                        <h3 class="card__item-info-sub-title">UPTO 50% OFF</h3>
-                        <a class="card__item-info-link" href="#">Explore items</a>
+            <div class="flex-group">
+                <div class="position-relative">
+                    <img class="border-radius-2 box-shadow-1" src="/images/unsplash_Qyc13QBGaM4.png"
+                         alt="Unsplash High Coziness">
+                    <div class="position-absolute clr-neutral-000" data-position-block="center" data-position-left
+                         style="--left-value: 30px;">
+                        <h6 class="ff-accent fw-bold fs-500 lh-450 margin-block-end-6">Low Price</h6>
+                        <h2 class="ff-accent fw-bold fs-800 lh-575 uppercase margin-block-end-4">High Coziness</h2>
+                        <h3 class="ff-accent lh-450 margin-block-end-10">UPTO 50% OFF</h3>
+                        <a class="fw-bold ff-accent fs-500 clr-neutral-000" href="#">Explore items</a>
                     </div>
                 </div>
-                <div class="card__item shadow text-white">
-                    <img height="355" src="/images/unsplash_Qyc13QBGaM7.png" alt="Unsplash Breezy Summer Style">
-                    <div class="card__item-info">
-                        <h6 class="card__item-info-intro">Beygoung Presents</h6>
-                        <h2 class="card__item-info-title">Breezy Summer Style</h2>
-                        <h3 class="card__item-info-sub-title">UPTO 50% OFF</h3>
-                        <a class="card__item-info-link" href="#">Explore items</a>
+                <div class="position-relative">
+                    <img class="border-radius-2 box-shadow-1" src="/images/unsplash_Qyc13QBGaM7.png"
+                         alt="Unsplash Breezy Summer Style">
+                    <div class="position-absolute clr-neutral-000" data-position-block="center" data-position-left
+                         style="--left-value: 30px;">
+                        <h6 class="ff-accent fw-bold fs-500 lh-450 margin-block-end-6">Beygoung Presents</h6>
+                        <h2 class="ff-accent fw-bold fs-800 lh-575 uppercase margin-block-end-4">Breezy Summer
+                            Style</h2>
+                        <h3 class="ff-accent lh-450 margin-block-end-10">UPTO 50% OFF</h3>
+                        <a class="fw-bold ff-accent fs-500 clr-neutral-000" href="#">Explore items</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section>
+    <section class="section">
         <div class="container animations__fade_in">
-            <h2 class="title">New Arrival</h2>
-            <div class="carousel" slideToScroll="4" slidesVisible="4" loop="true">
-                <div class="carousel__container-item">
-                    <img src="/images/Rectangle-27.png" alt="">
-                    <h2 class="carousel__container-item-title">Knitted Joggers</h2>
+            <h2 class="heading-1 margin-block-end-17">New Arrival</h2>
+            <div class="carousel padding-inline-start-20 padding-inline-end-12" slideToScroll="4" slidesVisible="4"
+                 loop="true">
+                <div class="flex-group" data-flex-direction="column" data-flex-row-gap="reset"
+                     data-flex-column-gap="reset">
+                    <img class="border-radius-2" src="/images/Rectangle-27.png" alt="">
+                    <h2 class="fw-bold fs-600 margin-block-start-8">Knitted Joggers</h2>
                 </div>
-                <div class="carousel__container-item">
-                    <img src="/images/Rectangle-28.png" alt="">
-                    <h2 class="carousel__container-item-title">Full Sleeve</h2>
+                <div class="flex-group" data-flex-direction="column" data-flex-row-gap="reset"
+                     data-flex-column-gap="reset">
+                    <img class="border-radius-2" src="/images/Rectangle-28.png" alt="">
+                    <h2 class="fw-bold fs-600 margin-block-start-8">Full Sleeve</h2>
                 </div>
-                <div class="carousel__container-item">
-                    <img src="/images/Rectangle-29.png" alt="">
-                    <h2 class="carousel__container-item-title">Active T-Shirts</h2>
+                <div class="flex-group" data-flex-direction="column" data-flex-row-gap="reset"
+                     data-flex-column-gap="reset">
+                    <img class="border-radius-2" src="/images/Rectangle-29.png" alt="">
+                    <h2 class="fw-bold fs-600 margin-block-start-8">Active T-Shirts</h2>
                 </div>
-                <div class="carousel__container-item">
-                    <img src="/images/Rectangle-30.png" alt="">
-                    <h2 class="carousel__container-item-title">Urban Shirts</h2>
+                <div class="flex-group" data-flex-direction="column" data-flex-row-gap="reset"
+                     data-flex-column-gap="reset">
+                    <img class="border-radius-2" src="/images/Rectangle-30.png" alt="">
+                    <h2 class="fw-bold fs-600 margin-block-start-8">Urban Shirts</h2>
+                </div>
+                <div class="flex-group" data-flex-direction="column" data-flex-row-gap="reset"
+                     data-flex-column-gap="reset">
+                    <img class="border-radius-2" src="/images/Rectangle-30.png" alt="">
+                    <h2 class="fw-bold fs-600 margin-block-start-8">Urban Shirts</h2>
+                </div>
+                <div class="flex-group" data-flex-direction="column" data-flex-row-gap="reset"
+                     data-flex-column-gap="reset">
+                    <img class="border-radius-2" src="/images/Rectangle-30.png" alt="">
+                    <h2 class="fw-bold fs-600 margin-block-start-8">Urban Shirts</h2>
+                </div>
+                <div class="flex-group" data-flex-direction="column" data-flex-row-gap="reset"
+                     data-flex-column-gap="reset">
+                    <img class="border-radius-2" src="/images/Rectangle-30.png" alt="">
+                    <h2 class="fw-bold fs-600 margin-block-start-8">Urban Shirts</h2>
+                </div>
+                <div class="flex-group" data-flex-direction="column" data-flex-row-gap="reset"
+                     data-flex-column-gap="reset">
+                    <img class="border-radius-2" src="/images/Rectangle-30.png" alt="">
+                    <h2 class="fw-bold fs-600 margin-block-start-8">Urban Shirts</h2>
                 </div>
             </div>
         </div>
     </section>
-    <section class="deals">
+    <section class="section">
         <div class="container animations__fade_in">
-            <h2 class="title">Big Saving Zone</h2>
-            <div class="deals__items gap-20">
-                <div class="card__item small-font text-white">
-                    <img height="393" src="/images/Rectangle-74.png" alt="Hawaiian Shirtss">
-                    <div class="card__item-info left">
-                        <h2 class="card__item-info-title">Hawaiian Shirts</h2>
-                        <h6 class="card__item-info-intro">Dress up in summer vibe</h6>
-                        <h3 class="card__item-info-sub-title">UPTO 50% OFF</h3>
-                        {{ icon("arrow", "icons") }}
-                        <a class="card__item-info-link" href="#">Shop Now</a>
+            <h2 class="heading-1 margin-block-end-17">Big Saving Zone</h2>
+            <div class="flex-group">
+                <div class="position-relative">
+                    <img class="border-radius-2" src="/images/Rectangle-74.png" alt="Hawaiian Shirtss">
+                    <div class="position-absolute" data-position-block="center" data-position-left
+                         style="--left-value:20px;">
+                        <h2 class="ff-accent fs-700 fw-bold clr-neutral-000 margin-block-end-2">Hawaiian Shirts</h2>
+                        <h6 class="ff-accent fs-200 clr-neutral-000 margin-block-end-2">Dress up in summer vibe</h6>
+                        <h3 class="ff-accent fs-500 fw-bold clr-neutral-000 margin-block-end-9">UPTO 50% OFF</h3>
+                        {{ icon("arrow", "icons", 1.625, "clr-neutral-000 mx-auto margin-block-end-11") }}
+                        <a class="button clr-neutral-000 flex-group mx-auto" data-type="outline" href="#">Shop Now</a>
                     </div>
                 </div>
-                <div class="card__item small-font text-white">
-                    <img height="393" src="/images/Rectangle-75.png" alt="Printed T-Shirt">
-                    <div class="card__item-info right">
-                        <span class="card_item-info-span">Limited Stock</span>
-                        <h2 class="card__item-info-title">Printed T-Shirt</h2>
-                        <h6 class="card__item-info-intro">New Designs Every Week</h6>
-                        <h3 class="card__item-info-sub-title">UPTO 40% OFF</h3>
-                        {{ icon("arrow", "icons") }}
-                        <a class="card__item-info-link" href="#">Shop Now</a>
+                <div class="position-relative">
+                    <img class="border-radius-2" src="/images/Rectangle-75.png" alt="Printed T-Shirt">
+                    <div class="position-absolute text-end" data-position-block="center" data-position-right
+                         style="--right-value:20px;">
+                        <span
+                            class="clr-neutral-000 bg-neutral-1000 fw-regular border-radius-1 fs-200 margin-block-end-7 padding-block-3 padding-inline-8"
+                            style="display: inline-flex;">Limited Stock</span>
+                        <h2 class="ff-accent fs-700 fw-bold clr-neutral-000 margin-block-end-2">Printed T-Shirt</h2>
+                        <h6 class="ff-accent fs-200 clr-neutral-000 margin-block-end-2">New Designs Every Week</h6>
+                        <h3 class="ff-accent fs-500 fw-bold clr-neutral-000 margin-block-end-9">UPTO 40% OFF</h3>
+                        {{ icon("arrow", "icons", 1.625, "clr-neutral-000 mx-auto margin-block-end-11") }}
+                        <a class="button clr-neutral-000 flex-group mx-auto" data-type="outline" href="#">Shop Now</a>
                     </div>
                 </div>
-                <div class="card__item small-font text-dark">
-                    <img height="393" src="/images/Rectangle-76.png" alt="Cargo Joggers">
-                    <div class="card__item-info right">
-                        <h2 class="card__item-info-title">Cargo Joggers</h2>
-                        <h6 class="card__item-info-intro">Move with style & comfort</h6>
-                        <h3 class="card__item-info-sub-title">UPTO 50% OFF</h3>
-                        {{ icon("arrow", "icons") }}
-                        <a class="card__item-info-link" href="#">Shop Now</a>
+                <div class="position-relative">
+                    <img class="border-radius-2" src="/images/Rectangle-76.png" alt="Cargo Joggers">
+                    <div class="position-absolute" data-position-block="center" data-position-right
+                         style="--right-value:20px;">
+                        <h2 class="ff-accent fs-700 fw-bold clr-neutral-1000 margin-block-end-2">Cargo Joggers</h2>
+                        <h6 class="ff-accent fs-200 clr-neutral-1000 margin-block-end-2">Move with style & comfort</h6>
+                        <h3 class="ff-accent fs-500 fw-bold clr-neutral-1000 margin-block-end-9">UPTO 50% OFF</h3>
+                        {{ icon("arrow", "icons", 1.625, "clr-neutral-1000 mx-auto margin-block-end-11") }}
+                        <a class="button clr-neutral-1000 flex-group mx-auto" data-type="outline" href="#">Shop Now</a>
                     </div>
                 </div>
-                <div class="card__item small-font text-dark">
-                    <img height="393" src="/images/Rectangle-77.png" alt="Urban Shirts">
-                    <div class="card__item-info center-right">
-                        <h2 class="card__item-info-title">Urban Shirts</h2>
-                        <h6 class="card__item-info-intro">Live In Confort</h6>
-                        <h3 class="card__item-info-sub-title">FLAT 60% OFF</h3>
-                        {{ icon("arrow", "icons") }}
-                        <a class="card__item-info-link" href="#">Shop Now</a>
+                <div class="position-relative">
+                    <img class="border-radius-2" src="/images/Rectangle-77.png" alt="Urban Shirts">
+                    <div class="position-absolute text-end" data-position-block="center" data-position-right
+                         style="--right-value:40px;">
+                        <h2 class="ff-accent fs-700 fw-bold clr-neutral-1000 margin-block-end-2">Urban Shirts</h2>
+                        <h6 class="ff-accent fs-200 clr-neutral-1000 margin-block-end-2">Live In Confort</h6>
+                        <h3 class="ff-accent fs-500 fw-bold clr-neutral-1000 margin-block-end-9">FLAT 60% OFF</h3>
+                        {{ icon("arrow", "icons", 1.625, "clr-neutral-1000 mx-auto margin-block-end-11") }}
+                        <a class="button clr-neutral-1000 flex-group mx-auto" data-type="outline" href="#">Shop Now</a>
                     </div>
                 </div>
-                <div class="card__item small-font text-dark">
-                    <img height="393" src="/images/Rectangle-78.png" alt="Oversized T-Shirts">
-                    <div class="card__item-info center-right">
-                        <h2 class="card__item-info-title">Oversized T-Shirts</h2>
-                        <h6 class="card__item-info-intro">Street Style Icon</h6>
-                        <h3 class="card__item-info-sub-title">FLAT 60% OFF</h3>
-                        {{ icon("arrow", "icons") }}
-                        <a class="card__item-info-link" href="#">Shop Now</a>
+                <div class="position-relative">
+                    <img class="border-radius-2" src="/images/Rectangle-78.png" alt="Oversized T-Shirts">
+                    <div class="position-absolute" data-position-block="center" data-position-right
+                         style="--right-value:40px;">
+                        <h2 class="ff-accent fs-700 fw-bold clr-neutral-1000">Oversized T-Shirts</h2>
+                        <h6 class="ff-accent fs-200 clr-neutral-1000">Street Style Icon</h6>
+                        <h3 class="ff-accent fs-500 fw-bold clr-neutral-1000 margin-block-end-9">FLAT 60% OFF</h3>
+                        {{ icon("arrow", "icons", 1.625, "clr-neutral-1000 mx-auto margin-block-end-11") }}
+                        <a class="button clr-neutral-1000 flex-group mx-auto" data-type="outline" href="#">Shop Now</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="pub">
+    <section class="section">
         <div class="container animations__fade_in">
-            <div class="pub__item">
-                <img src="/images/unsplash_bBiuSdck8tU.png" alt="">
-                <div class="pub__item-content">
-                    <h2 class="pub__item-content-title">We made your everyday fashion better!</h2>
-                    <p>
-                        In our journey to improve everyday fashion, euphoria presents EVERYDAY wear range - Comfortable & Affordable fashion 24/7
-                    </p>
-                    <a href="/shop" class="pub__item-link">
-                        Shop Now
-                    </a>
-                </div>
-            </div>
-            <div class="pub__item">
-                <img src="/images/Rectangle-13.png" alt="">
-            </div>
-        </div>
-    </section>
-    <section class="categories">
-        <div class="container animations__fade_in">
-            <h2 class="title">Categories For Men</h2>
-            <div class="categories__items">
-                <div class="categories__items-card" data-id="1" data-label="Shirts" data-sub-label="Explore Now!" data-url="/shop/men/shirts" data-image="/uploads/categories/Rectangle-20.png"></div>
-                <div class="categories__items-card" data-id="2" data-label="Printed T-Shirts" data-sub-label="Explore Now!" data-url="/shop/men/printed-t-shirts" data-image="/uploads/categories/Rectangle-21.png"></div>
-                <div class="categories__items-card" data-id="3" data-label="Plain T-Shirt" data-sub-label="Explore Now!" data-url="/shop/men/plain-t-shirt" data-image="/uploads/categories/Rectangle-22.png"></div>
-                <div class="categories__items-card" data-id="4" data-label="Polo T-Shirt" data-sub-label="Explore Now!" data-url="/shop/men/polo-t-shirt" data-image="/uploads/categories/Rectangle-23.png"></div>
-                <div class="categories__items-card" data-id="5" data-label="Hoodies & Sweetshirt" data-sub-label="Explore Now!" data-url="/shop/men/hoodies-&-sweetshirt" data-image="/uploads/categories/Rectangle-24.png"></div>
-                <div class="categories__items-card" data-id="6" data-label="Jeans" data-sub-label="Explore Now!" data-url="/shop/men/jeans" data-image="/uploads/categories/Rectangle-25.png"></div>
-                <div class="categories__items-card" data-id="7" data-label="Activewear" data-sub-label="Explore Now!" data-url="/shop/men/activewear" data-image="/uploads/categories/Rectangle-26.png"></div>
-                <div class="categories__items-card" data-id="8" data-label="Boxers" data-sub-label="Explore Now!" data-url="/shop/men/boxers" data-image="/uploads/categories/Rectangle-27.png"></div>
-            </div>
-        </div>
-    </section>
-    <section class="categories">
-        <div class="container animations__fade_in">
-            <h2 class="title">Categories For Women</h2>
-            <div class="categories__items">
-                <div class="categories__items-card" data-id="9" data-label="Hoodies & Sweetshirt" data-sub-label="Explore Now!" data-url="/shop/women/hoodies-&-sweetshirt" data-image="/uploads/categories/Rectangle-28.png"></div>
-                <div class="categories__items-card" data-id="10" data-label="Coats & Parkas" data-sub-label="Explore Now!" data-url="/shop/women/coats-&-parkas" data-image="/uploads/categories/Rectangle-29.png"></div>
-                <div class="categories__items-card" data-id="11" data-label="Tees & T-Shirt" data-sub-label="Explore Now!" data-url="/shop/women/tees-&t-shirt-" data-image="/uploads/categories/Rectangle-30.png"></div>
-                <div class="categories__items-card" data-id="12" data-label="Boxers" data-sub-label="Explore Now!" data-url="/shop/women/boxers" data-image="/uploads/categories/Rectangle-31.png"></div>
-            </div>
-        </div>
-    </section>
-    <section class="brands">
-        <div class="container animations__fade_in">
-            <h2 class="brands__title">Top Brands Deals</h2>
-            <h3 class="brands__sub-title">Up to <span>60%</span> off on brands</h3>
-            <div class="brands__items">
-                <img src="/images/brands/nike.png" alt="">
-                <img src="/images/brands/h&m.png" alt="">
-                <img src="/images/brands/levis.png" alt="">
-                <img src="/images/brands/us-polo-assn.png" alt="">
-                <img src="/images/brands/puma.png" alt="">
-            </div>
-        </div>
-    </section>
-    <section class="products">
-        <div class="container animations__fade_in">
-            <h2 class="title">In The Limelight</h2>
-            <div class="products__items">
-                <div class="products__items-card" data-id="9" data-label="Black Sweatshirt with White Brand" data-sub-label="Jhanvi’s  Brand" data-url="/products/black-sweatshirt-with-white-brand" data-image="/uploads/products/Rectangle-25.png" data-price="123.00"></div>
-                <div class="products__items-card" data-id="10" data-label="line Pattern Black Hat" data-sub-label="AS’s  Brand" data-url="/products/line-pattern-black-hat" data-image="/uploads/products/Rectangle-26.png"  data-price="37.00"></div>
-                <div class="products__items-card" data-id="11" data-label="Black Shorts" data-sub-label="MM’s  Brand" data-url="/products/black-shorts" data-image="/uploads/products/Rectangle-27.png"  data-price="37.00"></div>
-                <div class="products__items-card" data-id="12" data-label="Levender Hoodie with Cord" data-sub-label="Nike’s  Brand" data-url="/products/levender-hoodie-with-cord" data-image="/uploads/products/Rectangle-28.png"  data-price="119.00"></div>
-            </div>
-        </div>
-    </section>
-    <section class="feedback">
-        <div class="container animations__fade_in">
-            <h2 class="title">Feedback</h2>
-            <div class="carousel" slideToScroll="3" slidesVisible="3" loop="true">
-                <div class="feedback__card">
-                    <div class="feedback__card-header">
-                        <div class="feedback__card-header-user">
-                            <img src="/uploads/users/1.png" alt="">
-                            <div class="spacer"></div>
-                            <div class="feedback__card-header-stars" data-rate="3.5">
-                                <span></span>
-                                <span class="half"></span>
-                                <span></span>
-                                <span class="half"></span>
-                                <span></span>
-                                <span class="half"></span>
-                                <span></span>
-                                <span class="half"></span>
-                                <span></span>
-                                <span class="half"></span>
-                            </div>
-                        </div>
-                        <h4 class="feedback__card-header-user-name">Floyd Miles</h4>
+            <div class="even-columns padding-inline-10" data-even-columns-gap="reset">
+                <div class="position-relative">
+                    <img class="border-top-left-radius-1 border-bottom-left-radius-1"
+                         src="/images/unsplash_bBiuSdck8tU.png" alt="">
+                    <div class="position-absolute padding-inline-18" data-position-block="center">
+                        <h2 class="ff-accent fw-bold fs-800 clr-neutral-000 uppercase margin-block-end-7">We made your
+                            everyday fashion better!</h2>
+                        <p class="fs-500 clr-neutral-000 margin-block-end-12" style="letter-spacing: 1px">
+                            In our journey to improve everyday fashion, euphoria presents EVERYDAY wear range -
+                            Comfortable & Affordable fashion 24/7
+                        </p>
+                        <a href="/shop" class="button" data-type="accent">
+                            Shop Now
+                        </a>
                     </div>
-                    <p class="feedback__card-body">
-                        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.
-                        Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
-                    </p>
                 </div>
-                <div class="feedback__card">
-                    <div class="feedback__card-header">
-                        <div class="feedback__card-header-user">
-                            <img src="/uploads/users/2.png" alt="">
-                            <div class="spacer"></div>
-                            <div class="feedback__card-header-stars" data-rate="4">
-                                <span></span>
-                                <span class="half"></span>
-                                <span></span>
-                                <span class="half"></span>
-                                <span></span>
-                                <span class="half"></span>
-                                <span></span>
-                                <span class="half"></span>
-                                <span></span>
-                                <span class="half"></span>
-                            </div>
-                        </div>
-                        <h4 class="feedback__card-header-user-name">Ronald Richards</h4>
-                    </div>
-                    <p class="feedback__card-body">
-                        ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
-                    </p>
-                </div>
-                <div class="feedback__card">
-                    <div class="feedback__card-header">
-                        <div class="feedback__card-header-user">
-                            <img src="/uploads/users/3.png" alt="">
-                            <div class="spacer"></div>
-                            <div class="feedback__card-header-stars" data-rate="3.5">
-                                <span></span>
-                                <span class="half"></span>
-                                <span></span>
-                                <span class="half"></span>
-                                <span></span>
-                                <span class="half"></span>
-                                <span></span>
-                                <span class="half"></span>
-                                <span></span>
-                                <span class="half"></span>
-                            </div>
-                        </div>
-                        <h4 class="feedback__card-header-user-name">Savannah Nguyen</h4>
-                    </div>
-                    <p class="feedback__card-body">
-                        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.
-                        Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
-                    </p>
+                <div class="position-relative">
+                    <img class="border-top-right-radius-1 border-bottom-right-radius-1" src="/images/Rectangle-13.png"
+                         alt="">
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container animations__fade_in">
+            <h2 class="heading-1 margin-block-end-17">Categories For Men</h2>
+            <div class="flex-group" style="--flex-row-gap:36px; --flex-column-gap: 36px;">
+                {% include 'partials/category.html.twig' with {id: 1, label: 'Shirt', subLabel: 'Explore Now!', url: '/shop/men/shirts', image: '/uploads/categories/Rectangle-20.png'} only %}
+                {% include 'partials/category.html.twig' with {id: 2, label: 'Printed T-Shirts', subLabel: 'Explore Now!', url: '/shop/men/printed-t-shirts', image: '/uploads/categories/Rectangle-21.png'} only %}
+                {% include 'partials/category.html.twig' with {id: 3, label: 'Plain T-Shirt', subLabel: 'Explore Now!', url: '/shop/men/plain-t-shirt', image: '/uploads/categories/Rectangle-22.png'} only %}
+                {% include 'partials/category.html.twig' with {id: 4, label: 'Polo T-Shirt', subLabel: 'Explore Now!', url: '/shop/men/polo-t-shirt', image: '/uploads/categories/Rectangle-23.png'} only %}
+                {% include 'partials/category.html.twig' with {id: 5, label: 'Hoodies & Sweetshirt', subLabel: 'Explore Now!', url: '/shop/men/hoodies-&-sweetshirt', image: '/uploads/categories/Rectangle-24.png'} only %}
+                {% include 'partials/category.html.twig' with {id: 6, label: 'Jeans', subLabel: 'Explore Now!', url: '/shop/men/jeans', image: '/uploads/categories/Rectangle-25.png'} only %}
+                {% include 'partials/category.html.twig' with {id: 7, label: 'Activewear', subLabel: 'Explore Now!', url: '/shop/men/activewear', image: '/uploads/categories/Rectangle-26.png'} only %}
+                {% include 'partials/category.html.twig' with {id: 8, label: 'Boxers', subLabel: 'Explore Now!', url: '/shop/men/boxers', image: '/uploads/categories/Rectangle-27.png'} only %}
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container animations__fade_in">
+            <h2 class="heading-1 margin-block-end-17">Categories For Women</h2>
+            <div class="flex-group" style="--flex-row-gap:36px; --flex-column-gap: 36px;">
+                {% include 'partials/category.html.twig' with {id: 9, label: 'Hoodies & Sweetshirt', subLabel: 'Explore Now!', url: '/shop/women/hoodies-&-sweetshirt', image: '/uploads/categories/Rectangle-28.png'} only %}
+                {% include 'partials/category.html.twig' with {id: 10, label: 'Coats & Parkas', subLabel: 'Explore Now!', url: '/shop/women/coats-&-parkas', image: '/uploads/categories/Rectangle-29.png'} only %}
+                {% include 'partials/category.html.twig' with {id: 11, label: 'Tees & T-Shirt', subLabel: 'Explore Now!', url: '/shop/women/tees-&t-shirt', image: '/uploads/categories/Rectangle-30.png'} only %}
+                {% include 'partials/category.html.twig' with {id: 12, label: 'Boxers', subLabel: 'Explore Now!', url: '/shop/women/boxers', image: '/uploads/categories/Rectangle-31.png'} only %}
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container animations__fade_in bg-neutral-1000 border-radius-1 padding-block-15">
+            <h2 class="fw-bold ff-accent fs-850 clr-neutral-000 text-center margin-block-end-6">Top Brands Deals</h2>
+            <h3 class="fw-bold fs-600 clr-neutral-000 text-center margin-block-end-17">Up to <span
+                    class="clr-yellow-400">60%</span> off on brands</h3>
+            <div class="flex-group mx-auto">
+                <img class="bg-neutral-000 border-radius-1 padding-inline-10 padding-block-4"
+                     src="/images/brands/nike.png" width="175" alt="">
+                <img class="bg-neutral-000 border-radius-1 padding-inline-10 padding-block-4"
+                     src="/images/brands/h&m.png" width="175" alt="">
+                <img class="bg-neutral-000 border-radius-1 padding-inline-10 padding-block-4"
+                     src="/images/brands/levis.png" width="175" alt="">
+                <img class="bg-neutral-000 border-radius-1 padding-inline-10 padding-block-4"
+                     src="/images/brands/us-polo-assn.png" width="175" alt="">
+                <img class="bg-neutral-000 border-radius-1 padding-inline-10 padding-block-4"
+                     src="/images/brands/puma.png" width="175" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container animations__fade_in">
+            <h2 class="heading-1 margin-block-end-17">In The Limelight</h2>
+            <div class="flex-group" style="--flex-row-gap:36px; --flex-column-gap: 36px;">
+                {% include 'partials/product.html.twig' with {id: 9, label: 'Black Sweatshirt with White Brand', subLabel: 'Jhanvi’s  Brand', url: '/products/black-sweatshirt-with-white-brand', image: '/uploads/products/Rectangle-25.png', price: "123.00"} only %}
+                {% include 'partials/product.html.twig' with {id: 9, label: 'line Pattern Black Hat', subLabel: 'AS’s  Brand', url: '/products/line-pattern-black-hat', image: '/uploads/products/Rectangle-26.png', price: "123.00"} only %}
+                {% include 'partials/product.html.twig' with {id: 9, label: 'Black Shorts', subLabel: 'MM’s  Brand', url: '/products/black-shorts', image: '/uploads/products/Rectangle-27.png', price: "37.00"} only %}
+                {% include 'partials/product.html.twig' with {id: 9, label: 'Levender Hoodie with Cord', subLabel: 'Nike’s  Brand', url: '/shop/women/hoodies-&-sweetshirt', image: '/uploads/products/Rectangle-28.png', price: "119.00"} only %}
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container animations__fade_in">
+            <h2 class="heading-1 margin-block-end-17">Feedback</h2>
+            <div class="carousel padding-inline-start-20 padding-inline-end-12" slideToScroll="3" slidesVisible="3" loop="true">
+                {% include 'partials/feedback.html.twig' with {'username': 'Floyd Miles', 'user_image': '/uploads/users/1.png', 'rate': 3.5, 'feedback': 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.
+                        Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'} only %}
+                {% include 'partials/feedback.html.twig' with {'username': 'Ronald Richards', 'user_image': '/uploads/users/2.png', 'rate': 4, 'feedback': 'Ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'} only %}
+                {% include 'partials/feedback.html.twig' with {'username': 'Savannah Nguyen', 'user_image': '/uploads/users/3.png', 'rate': 3.5, 'feedback': 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.
+                        Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'} only %}
+                </div>
         </div>
     </section>
 {% endblock %}

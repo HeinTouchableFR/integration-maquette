@@ -1,0 +1,32 @@
+@use '../abstracts/' as *;
+
+.heading-1 {
+    display: flex;
+
+    @include heading(
+            $heading-1-font-size,
+            $heading-1-color
+    );
+
+    &:before {
+        display: block;
+        content: "";
+        width: 0.375rem;
+        height: 1.875rem;
+        border-radius: 10px;
+        background: $color-primary-400;
+        margin-right: 20px;
+    }
+}
+.heading-2 {
+    @include heading(
+            $heading-2-font-size,
+            $heading-2-color
+    );
+}
+.heading-3 {
+    @include heading(
+            $heading-3-font-size,
+            $heading-3-color
+    );
+}

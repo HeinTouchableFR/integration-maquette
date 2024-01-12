@@ -20,15 +20,15 @@ class TwigExtension extends AbstractExtension
     /**
      * Génère le code HTML pour une icone SVG.
      */
-    public function svgIcon(string $name, string $asset, ?int $size = null): string
+    public function svgIcon(string $name, string $asset, ?float $size = null, ?string $className = ""): string
     {
         $attrs = '';
         if ($size) {
-            $attrs = " width=\"{$size}px\" height=\"{$size}px\"";
+            $attrs = " width=\"{$size}rem\" height=\"{$size}rem\"";
         }
 
         return <<<HTML
-        <svg class="icon icon-{$name}"{$attrs}>
+        <svg class="icon icon-{$name} {$className}"{$attrs}>
           <use xlink:href="/images/{$asset}.svg?logo#{$name}"></use>
         </svg>
         HTML;

@@ -1,0 +1,57 @@
+@use '../abstracts' as *;
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+
+    .carousel__container {
+        gap: 30px;
+        transform: translate3d(0, 0, 0);
+        transition: .3s;
+        flex-wrap: initial;
+
+        &:after {
+            content: '';
+            clear: both;
+            display: table;
+        }
+    }
+
+    .carousel__buttons {
+        .carousel__buttons-prev, .carousel__buttons-next {
+            position: absolute;
+            width: 80px;
+            height: 102%;
+            z-index: 11;
+            text-indent: -3000px;
+            cursor: pointer;
+            transition: .3s;
+            top: -1px;
+            left: 0;
+            background-color: $color-neutral-000;
+
+            &:after {
+                display: block;
+                content: '';
+                background-color: $color-neutral-1000;
+                mask: url("/images/arrow.svg") center center / 24px 44px no-repeat;
+                -webkit-mask: url("/images/arrow.svg") center center / 24px 44px no-repeat;
+                height: 100%;
+                width: 80px;
+                transition: .3s;
+            }
+
+            &:hover, &:focus {
+                &:after {
+                    background-color: $color-primary-400;
+                }
+            }
+        }
+
+        .carousel__buttons-next {
+            right: 0;
+            left: auto;
+            transform: rotate(180deg);
+        }
+    }
+}

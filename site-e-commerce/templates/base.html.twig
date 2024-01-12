@@ -12,77 +12,87 @@
     {% block javascripts %}
         {{- vite_entry_script_tags('app') }}
     {% endblock %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <body>
 <div class="page-wrapper">
-    <nav class="header">
+    <header class="site-header">
         <div class="container">
-            <a href="{{ url('page.home') }}">
-                <img src="images/Logo.svg" alt="Logo" width="90" height="45">
-            </a>
-            <div class="spacer"></div>
-            {% if isLogged %}
-                <ul class="header__menu">
-                    <li>
-                        <a href="/shop" aria-current="page">Shop</a>
-                    </li>
-                    <li>
-                        <a href="/men">Men</a>
-                    </li>
-                    <li>
-                        <a href="/women">Women</a>
-                    </li>
-                    <li>
-                        <a href="/combos">Combos</a>
-                    </li>
-                    <li>
-                        <a href="/joggers">Joggers</a>
-                    </li>
-                </ul>
-                <div class="spacer"></div>
-            {% endif %}
-            <label class="header__search-bar">
-                <input type="text" placeholder="Search"/>
-            </label>
-            <div class="spacer"></div>
-            {% if isLogged %}
-                <div class="header__actions">
-                    <a href="/favorites" title="favorite">
-                        {{ icon("favorite", "icons") }}
-                    </a>
-                    <a href="/account" title="Account">
-                        {{ icon("account", "icons") }}
-                    </a>
-                    <a href="/cart" title="Cart">
-                        {{ icon("cart", "icons") }}
-                    </a>
-                </div>
-            {% else %}
-                <label class="header__language">
-                    <select name="language" id="language">
-                        <option value="us">English (United States)</option>
-                        <option value="en">English (British)</option>
-                        <option value="fr">French</option>
-                    </select>
+            <div class="site-header__inner">
+                <a href="{{ url('page.home') }}">
+                    <img src="images/Logo.svg" alt="Logo" width="90" height="45">
+                </a>
+                {% if isLogged %}
+                    <nav>
+                        <ul class="nav flex-group fs-600">
+                            <li>
+                                <a href="/shop" aria-current="page">Shop</a>
+                            </li>
+                            <li>
+                                <a href="/men">Men</a>
+                            </li>
+                            <li>
+                                <a href="/women">Women</a>
+                            </li>
+                            <li>
+                                <a href="/combos">Combos</a>
+                            </li>
+                            <li>
+                                <a href="/joggers">Joggers</a>
+                            </li>
+                        </ul>
+                    </nav>
+                {% endif %}
+                <label
+                    class="site-header__inner-search-bar align-items-center padding-inline-5 bg-neutral-100 fw-regular clr-neutral-400">
+                    <input type="text" placeholder="Search"/>
                 </label>
-                <a class="btn btn-primary header__login" href="/login">
-                    Login
-                </a>
-                <a class="btn btn-secondary header__sign-up" href="/sign-up">
-                    Sign Up
-                </a>
-            {% endif %}
+                {% if isLogged %}
+                    <ul class="nav flex-group site-header__inner-actions">
+                        <li>
+                            <a class="padding-4" href="/favorites" title="favorite">
+                                {{ icon("favorite", "icons") }}
+                            </a>
+                        </li>
+                        <li>
+                            <a class="padding-4" href="/account" title="Account">
+                                {{ icon("account", "icons") }}
+                            </a>
+                        </li>
+                        <li>
+                            <a class="padding-4" href="/cart" title="Cart">
+                                {{ icon("cart", "icons") }}
+                            </a>
+                        </li>
+                    </ul>
+                {% else %}
+                    <label class="site-header__inner-language">
+                        <select name="language" id="language">
+                            <option value="us">English (United States)</option>
+                            <option value="en">English (British)</option>
+                            <option value="fr">French</option>
+                        </select>
+                    </label>
+                    <a class="btn btn-primary header__login" href="/login">
+                        Login
+                    </a>
+                    <a class="btn btn-secondary header__sign-up" href="/sign-up">
+                        Sign Up
+                    </a>
+                {% endif %}
+            </div>
         </div>
-    </nav>
+    </header>
     <div class="body">
         {% block content %}{% endblock %}
     </div>
-    <footer class="footer">
+    <footer class="site-footer padding-block-15">
         <div class="container">
-            <div class="footer_info">
+            <div class="even-columns margin-block-end-4">
                 <div class="footer__info-item">
-                    <h2 class="footer__info-item-title">Need Help</h2>
+                    <h2 class="fs-700 fw-bold margin-block-end-4">Need Help</h2>
                     <ul>
                         <li>
                             <a href="/contact">Contact Us</a>
@@ -102,7 +112,7 @@
                     </ul>
                 </div>
                 <div class="footer__info-item">
-                    <h2 class="footer__info-item-title">Company</h2>
+                    <h2 class="fs-700 fw-bold margin-block-end-4">Company</h2>
                     <ul>
                         <li>
                             <a href="/about">About Us</a>
@@ -122,7 +132,7 @@
                     </ul>
                 </div>
                 <div class="footer__info-item">
-                    <h2 class="footer__info-item-title">More Info</h2>
+                    <h2 class="fs-700 fw-bold margin-block-end-4">More Info</h2>
                     <ul>
                         <li>
                             <a href="/terms">Term and Conditions</a>
@@ -139,7 +149,7 @@
                     </ul>
                 </div>
                 <div class="footer__info-item">
-                    <h2 class="footer__info-item-title">Location</h2>
+                    <h2 class="fs-700 fw-bold margin-block-end-4">Location</h2>
                     <ul>
                         <li>
                             <a href="mailto:support@euphoria.in">support@euphoria.in</a>
@@ -153,50 +163,53 @@
                     </ul>
                 </div>
             </div>
-            <div class="footer_info">
-                <div class="footer__info-item">
-                    <div class="footer__socials">
-                        <a href="https://facebook.com" title="Facebook">
-                            {{ icon("facebook", "socials") }}
-                        </a>
-                        <a href="https://instagram.com" title="Instagram">
-                            {{ icon("instagram", "socials") }}
-                        </a>
-                        <a href="https://twitter.com" title="Twitter">
-                            {{ icon("twitter", "socials") }}
-                        </a>
-                        <a href="https://linkedin.com" title="Linkedin">
-                            {{ icon("linkedin", "socials") }}
-                        </a>
-                    </div>
+            <div class="flex-group margin-block-end-4 site-footer__social">
+                <div class="flex-group align-items-flex-end">
+                    <a class="bg-neutral-100 border-radius-1 padding-2 site-footer__social-item"
+                       href="https://facebook.com" title="Facebook">
+                        {{ icon("facebook", "socials") }}
+                    </a>
+                    <a class="bg-neutral-100 border-radius-1 padding-2 site-footer__social-item"
+                       href="https://instagram.com" title="Instagram">
+                        {{ icon("instagram", "socials") }}
+                    </a>
+                    <a class="bg-neutral-100 border-radius-1 padding-2 site-footer__social-item"
+                       href="https://twitter.com" title="Twitter">
+                        {{ icon("twitter", "socials") }}
+                    </a>
+                    <a class="bg-neutral-100 border-radius-1 padding-2 site-footer__social-item"
+                       href="https://linkedin.com" title="Linkedin">
+                        {{ icon("linkedin", "socials") }}
+                    </a>
                 </div>
-                <div class="spacer"></div>
-                <div class="footer__info-item">
-                    <h2 class="footer__info-item-title">Download The App</h2>
-                    <div class="footer__store">
-                        <a href="https://play.google.com/">
+                <div>
+                    <h2 class="fs-700 fw-bold margin-block-end-4">Download The App</h2>
+                    <div class="flex-group">
+                        <a class="flex-group bg-neutral-500 padding-block-2 padding-inline-4 align-items-center border-radius-1 site-footer__social-download"
+                           href="https://play.google.com/">
                             {{ icon("google-play", "store") }}
-                            <span class="footer__store-info">
-                            <span class="footer__store-info-title">Available on the</span>
-                            <span class="footer__store-info-name">Google Play</span>
-                        </span>
+                            <span class="flex-group" data-flex-direction="column" data-flex-row-gap="reset">
+                                <span class="fs-200">Available on the</span>
+                                <span class="fs-500">Google Play</span>
+                            </span>
                         </a>
-                        <a href="https://www.apple.com/fr/app-store/">
+                        <a class="flex-group bg-neutral-500 padding-block-2 padding-inline-4 align-items-center border-radius-1 site-footer__social-download"
+                           href="https://www.apple.com/fr/app-store/">
                             {{ icon("app-store", "store") }}
-                            <span class="footer__store-info">
-                            <span class="footer__store-info-title">Available on the</span>
-                            <span class="footer__store-info-name">App Store</span>
-                        </span>
+                            <span class="flex-group" data-flex-direction="column" data-flex-row-gap="reset">
+                                <span class="footer__store-info-title">Available on the</span>
+                                <span class="footer__store-info-name">App Store</span>
+                            </span>
                         </a>
                     </div>
                 </div>
             </div>
-            <label class="footer__categories">
-                <select name="categories" id="categories">
+            <label class="site-footer__categories margin-block-6">
+                <select class="fs-700 fw-bold clr-neutral-100 padding-block-7" name="categories" id="categories">
                     <option value="">Popular Categories</option>
                 </select>
             </label>
-            <h3 class="footer__copyright">Copyright © 2023 Euphoria Folks Pvt Ltd. All rights reserved.</h3>
+            <h3 class="text-center fs-500 fw-bold">Copyright © 2023 Euphoria Folks Pvt Ltd. All rights reserved.</h3>
         </div>
     </footer>
 </div>

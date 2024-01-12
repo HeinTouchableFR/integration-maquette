@@ -19,6 +19,8 @@ class Carousel {
     this.element = element
 
     this.container = document.createElement('div');
+    this.container.classList.add('flex-group')
+    this.container.setAttribute('data-flex-column-gap', 'reset')
     this.container.classList.add('carousel__container')
     this.element.setAttribute('tabindex', '0');
 
@@ -34,12 +36,15 @@ class Carousel {
 
 
     this.initCarousel()
-    this.initArrows()
+
+    if(this.slideToScroll !== this.items.length) {
+      this.initArrows()
+    }
   }
 
   initCarousel() {
     this.offset = this.slidesVisible + this.slideToScroll
-    if (this.loop) {
+    if (this.loop && this.slideToScroll !== this.items.length) {
       this.items = [
         ...this.items.slice(this.items.length - this.offset).map(item => item.cloneNode(true)),
         ...this.items,
@@ -50,6 +55,8 @@ class Carousel {
       if (this.loop) {
         this.container.addEventListener('transitionend', this.resetLoop.bind(this))
       }
+
+      new TouchPlugin(this)
     }
 
     this.items.forEach((elem) => {
@@ -66,8 +73,6 @@ class Carousel {
         this.slideToPrev()
       }
     })
-
-    new TouchPlugin(this)
   }
 
   initArrows() {

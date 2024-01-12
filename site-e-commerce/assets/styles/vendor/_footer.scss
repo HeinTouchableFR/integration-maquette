@@ -1,0 +1,74 @@
+@use "../abstracts" as *;
+
+.site-footer {
+
+    .site-footer__social {
+        width: initial;
+        justify-content: space-between;
+
+        .site-footer__social-item {
+            color: $color-neutral-1000;
+
+            &:hover{
+                color: $color-neutral-100;
+                background-color: $color-primary-400;
+            }
+        }
+
+        .site-footer__social-download {
+            &:hover {
+                color: $color-neutral-100;
+                background-color: $color-primary-400;
+            }
+        }
+    }
+
+    .site-footer__categories {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        &:before {
+            content: '';
+            position: absolute;
+            right: 7px;
+            top: 3px;
+            width: 22px;
+            background: #fff; //for Firefox in Android
+
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+            pointer-events: none;
+            display: block;
+        }
+
+        &:after {
+            content: url("/images/arrow-down-alt.svg");
+            position: absolute;
+            right: 45px;
+            top: 45%;
+            margin-top: -3px;
+            z-index: 2;
+            pointer-events: none;
+            width: 0;
+            height: 0;
+            pointer-events: none;
+        }
+
+        select {
+            width: 100%;
+            appearance: none;
+            border: none;
+            outline: none;
+            background: transparent;
+
+            border-top: solid 1px $color-neutral-400;
+            border-bottom: solid 1px $color-neutral-400;
+
+            //fix for ie 10 later
+            &::-ms-expand {
+                display: none;
+            }
+        }
+    }
+}

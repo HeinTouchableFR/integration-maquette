@@ -1,0 +1,57 @@
+@use "../abstracts" as *;
+
+.site-header {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    border-bottom: solid 1px $color-neutral-300;
+
+
+    .site-header__inner-search-bar {
+        display: flex;
+        max-width: 267px;
+        //gap: functions.space(1.5);
+        border-radius: 8px;
+        border: solid 1px $color-neutral-100;
+
+        input {
+            background: transparent;
+            outline: none;
+            border: none;
+        }
+
+        &:focus-within {
+            border: solid 1px $color-primary-400;
+        }
+
+        &:before {
+            content: url("/images/search.svg");
+        }
+    }
+
+
+    .site-header__inner-actions {
+        gap: 12px;
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $color-neutral-1000;
+            background: $color-neutral-200;
+            border-radius: 10px;
+            transition: color .3s, background-color .3s;
+
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            &:hover, &[aria-current] {
+                color: $color-neutral-100;
+                background: $color-primary-400;
+            }
+        }
+    }
+}
+

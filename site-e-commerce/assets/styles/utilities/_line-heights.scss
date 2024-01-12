@@ -1,0 +1,11 @@
+@use "../abstracts" as *;
+
+@each $screen-size, $size-map in $line-heights {
+    @each $size-name, $size-value in $size-map {
+        @if $screen-size == small {
+            .lh-#{$size-name} {
+                line-height: var(--lh-#{$size-name});
+            }
+        }
+    }
+}

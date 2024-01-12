@@ -1,0 +1,112 @@
+@use '../abstracts' as *;
+
+.feedback {
+    border: solid 1px $color-neutral-1000;
+
+    .feedback__stars {
+        margin-left: auto;
+
+        span {
+            color: #EDD146;
+            float: right;
+
+            &:before {
+                display: inline-block;
+                font-size: 1.1rem;
+                padding: .3rem .2rem;
+                margin: 0;
+                cursor: pointer;
+                font-family: FontAwesome, serif;
+                content: "\f006 "; /* full star */
+            }
+
+            &.half {
+                &:before {
+                    content: "";
+                    position: absolute;
+                    padding-right: 0;
+                }
+            }
+        }
+
+        &[data-rate^="1"], &[data-rate^="2"], &[data-rate^="3"], &[data-rate^="4"], &[data-rate^="5"] {
+            span:nth-child(2) {
+                &:before {
+                    content: "\f005 "; /* full star */
+                }
+            }
+        }
+
+        &[data-rate^="2"], &[data-rate^="3"], &[data-rate^="4"], &[data-rate^="5"] {
+            span:nth-child(4) {
+                &:before {
+                    content: "\f005 "; /* full star */
+                }
+            }
+        }
+
+        &[data-rate^="3"], &[data-rate^="4"], &[data-rate^="5"] {
+            span:nth-child(6) {
+                &:before {
+                    content: "\f005 "; /* full star */
+                }
+            }
+        }
+
+        &[data-rate^="4"], &[data-rate^="5"] {
+            span:nth-child(8) {
+                &:before {
+                    content: "\f005 "; /* full star */
+                }
+            }
+        }
+
+        &[data-rate^="5"] {
+            span:nth-child(10) {
+                &:before {
+                    content: "\f005 "; /* full star */
+                }
+            }
+        }
+
+        &[data-rate="4.5"] {
+            span:nth-child(9) {
+                &:before {
+                    content: "\f123";
+                }
+            }
+        }
+
+        &[data-rate="3.5"] {
+            span:nth-child(7) {
+                &:before {
+                    content: "\f123";
+                }
+            }
+        }
+
+        &[data-rate="2.5"] {
+            span:nth-child(5) {
+                &:before {
+                    content: "\f123";
+                }
+            }
+        }
+
+        &[data-rate="1.5"] {
+            span:nth-child(3) {
+                &:before {
+                    content: "\f123";
+                }
+            }
+        }
+
+        &[data-rate="0.5"] {
+            span:nth-child(1) {
+                &:before {
+                    content: "\f123";
+                }
+            }
+        }
+    }
+}

@@ -13,6 +13,8 @@ export function registerSlider() {
     function initDots() {
       const container = document.createElement("div");
       container.classList.add("slider__dots");
+      container.classList.add("flex-group");
+      container.setAttribute("data-flex-column-gap", 'reset')
       slides.forEach((_, i) => {
         const dot = document.createElement("span");
         dot.classList.add("slider__dots-item");

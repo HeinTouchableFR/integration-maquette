@@ -1,0 +1,23 @@
+<div class="feedback border-radius-1 padding-6">
+    <div class="margin-block-end-5">
+        <div class="even-columns margin-block-end-5">
+            <img src="{{ user_image }}" width="60" alt="">
+            <div class="flex-group feedback__stars" data-rate="{{ rate }}" data-flex-column-gap="reset" data-flex-justify="center">
+                <span class="half"></span>
+                <span></span>
+                <span class="half"></span>
+                <span></span>
+                <span class="half"></span>
+                <span></span>
+                <span class="half"></span>
+                <span></span>
+                <span class="half"></span>
+                <span></span>
+            </div>
+        </div>
+        <h4 class="ff-accent fw-bold clr-neutral-1000 fs-600">{{ username }}</h4>
+    </div>
+    <p class="fs-200 clr-neutral-400" style="letter-spacing: .28px">
+        {{ feedback }}
+    </p>
+</div>

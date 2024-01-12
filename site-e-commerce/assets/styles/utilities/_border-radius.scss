@@ -1,0 +1,41 @@
+@use "../abstracts/" as *;
+
+.border-radius-1 {
+    border-radius: $border-radius-1;
+}
+
+.border-radius-2 {
+    border-radius: $border-radius-2;
+}
+
+.border-top-left-radius-1 {
+    border-top-left-radius: $border-radius-1;
+}
+
+.border-top-left-radius-2 {
+    border-top-left-radius: $border-radius-2;
+}
+
+.border-top-right-radius-1 {
+    border-top-right-radius: $border-radius-1;
+}
+
+.border-top-right-radius-2 {
+    border-top-right-radius: $border-radius-2;
+}
+
+.border-bottom-left-radius-1 {
+    border-bottom-left-radius: $border-radius-1;
+}
+
+.border-bottom-left-radius-2 {
+    border-bottom-left-radius: $border-radius-2;
+}
+
+.border-bottom-right-radius-1 {
+    border-bottom-right-radius: $border-radius-1;
+}
+
+.border-bottom-right-radius-2 {
+    border-bottom-right-radius: $border-radius-2;
+}

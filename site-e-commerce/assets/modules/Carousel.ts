@@ -11,6 +11,7 @@ class Carousel {
   private options: { slidesToScroll: number; slidesVisible: number };
   private isMobile: boolean;
   private isTablet: boolean;
+  private moveCallbacks: any[];
 
   /**
    *
@@ -20,8 +21,6 @@ class Carousel {
     this.element = element
 
     this.container = document.createElement('div');
-    this.container.classList.add('flex-group')
-    this.container.setAttribute('data-flex-column-gap', 'reset')
     this.container.classList.add('carousel__container')
     this.element.setAttribute('tabindex', '0');
 
@@ -41,10 +40,14 @@ class Carousel {
 
     this.offset = 0
 
+    this.moveCallbacks = []
+
 
     this.initCarousel()
 
-    this.initArrows()
+    //this.initArrows()
+    this.initDots()
+    this.moveCallbacks.forEach(cb => cb(this.currentItem))
 
     window.addEventListener('resize', this.onResize.bind(this))
     this.onResize()
@@ -60,9 +63,7 @@ class Carousel {
       ]
       this.gotoItem(this.offset, false)
 
-      if (this.loop) {
-        this.container.addEventListener('transitionend', this.resetLoop.bind(this))
-      }
+      this.container.addEventListener('transitionend', this.resetLoop.bind(this))
     }
 
     new TouchPlugin(this)
@@ -97,7 +98,39 @@ class Carousel {
     container.appendChild(prev);
     container.appendChild(next);
 
-    this.element.appendChild(container)
+    this.element.parentElement.appendChild(container)
+  }
+
+  initDots() {
+    this.element.querySelector('.carousel__pagination')?.remove()
+    const pagination = document.createElement("div")
+    pagination.classList.add("carousel__pagination")
+    this.element.appendChild(pagination)
+    const buttons = []
+
+    for(let i = 0; i < (this.items.length - 2 * this.offset); i += this.slidesToScroll) {
+      const button= document.createElement("div")
+      button.classList.add("carousel__pagination-button")
+
+      button.addEventListener('click' , () => {
+        this.gotoItem(i + this.offset)
+      })
+
+      pagination.appendChild(button)
+      buttons.push(button)
+    }
+    this.onMove(index => {
+      const count = this.items.length - 2 * this.offset
+      const activeButton = buttons[Math.floor(((index - this.offset) % count) / this.slidesToScroll)]
+      if(activeButton) {
+        buttons.forEach(button => button.classList.remove('active'))
+        activeButton.classList.add('active')
+      }
+    })
+  }
+
+  onMove(cb) {
+    this.moveCallbacks.push(cb)
   }
 
   setStyle() {
@@ -131,6 +164,8 @@ class Carousel {
       this.enableTransition();
     }
     this.currentItem = index
+
+    this.moveCallbacks.forEach(cb => cb(this.currentItem))
   }
 
   slideToPrev() {
@@ -142,7 +177,8 @@ class Carousel {
   }
 
   resetLoop() {
-    if (this.currentItem <= this.options.slidesToScroll) {
+    const fix = (this.items.length - 2 * this.offset) % 2 === 0  ? 2 : 1;
+    if (this.currentItem <= this.options.slidesToScroll + fix) {
       this.gotoItem(this.currentItem + (this.items.length - 2 * this.offset), false)
     } else if (this.currentItem >= this.items.length - this.offset) {
       this.gotoItem(this.currentItem - (this.items.length - 2 * this.offset), false)
@@ -162,6 +198,8 @@ class Carousel {
       this.isTablet = false
       this.setStyle()
     }
+    this.initDots()
+    this.moveCallbacks.forEach(cb => cb(this.currentItem))
   }
 
   disableTransition() {
